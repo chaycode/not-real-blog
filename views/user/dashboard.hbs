@@ -1,0 +1,55 @@
+<div class="dashboard">
+	<div class="user-info">
+		<div class="image">
+
+		</div>
+		<div class="info-block">
+			<span class="full-name">{{user.first_name}} {{user.last_name}}</span>
+			<span class="username">{{user.username}}</span>
+			<span class="bio">{{user.bio}}</span>
+			<a class="btn wide" href="/update">Update Profile</a>
+		</div>
+		<span class="email"><a href="#">{{user.email}}</a></span>
+	</div>
+
+	<div class="dashboard-main">
+		<nav>
+			<a href="#0" value="overview" class="active">Overview</a>
+			<a href="#" value="dashboard-posts">Blog Posts</a>
+			<a href="#" value="followers">Followers</a>
+			<a href="#" value="following">Following</a>
+		</nav>
+		<div class="dashboard-main-content">
+			<div id="overview" class="dashboard-overview">
+				{{#each posts}}
+				<div class="dashboard-post">
+					<span class="post-title"><a href="#0">{{this.title}}</a></span>
+					<span class="post-date">
+						{{this.created_at}}
+					</span>
+					<span>
+						{{this.body}}
+					</span>
+				</div>
+				{{/each}}
+			</div>
+			<div id="dashboard-posts" class="dashboard-posts" hidden>
+				<div class="post-controls">
+					<a class="btn" href="#">New Post</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$("nav a").click(function(event) {
+		var content = $(this).attr('value');
+		console.log(content);
+
+		$("nav a").attr('class', '');
+		$(this).attr('class', 'active');
+		$(".dashboard-main-content div").hide()
+
+		$('#' + content).show();
+	})
+</script>

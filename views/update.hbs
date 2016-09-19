@@ -1,0 +1,11 @@
+<h1>Welcom {{user.username}}</h1>
+
+<span>Bio: </span>
+
+<textarea id="bio-update" name="bio" form="update-form" rows="8" cols="40" wrap="soft" >{{user.bio}}</textarea>
+
+<form id="update-form" class="" action="\update" method="post">
+	
+	<input type="submit" value="Update Profile">
+
+</form>

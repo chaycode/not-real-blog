@@ -1,0 +1,17 @@
+<div class="login-card">
+	<h1>Log In</h1>
+
+	{{#if error}}
+		<h3 style="color: red">{{error}}</h3>
+	{{/if}}
+	{{#if success}}
+		<h3>{{success}}</h3>
+	{{/if}}
+
+	<form action="\login" method="post">
+		<input name="username" placeholder="username">
+		<input type="password" name="password" placeholder="password">
+		<input type="submit" value="Log In">
+	</form>
+	<a class='btn' href="/register">Create New User</a>
+</div>

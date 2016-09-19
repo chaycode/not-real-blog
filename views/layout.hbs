@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{title}}</title>
+    <title>Practice with postgresql, knex, and passport</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+		<script src="https://code.jquery.com/jquery-3.1.0.js" charset="utf-8"></script>
   </head>
   <body>
-    {{{body}}}
+		<header>
+			<h1 class="title"><a href="/">CRUD_Practice</a></h1>
+			<nav>
+				{{#if user}}
+				<span>Logged In As: {{user.username}}</span>
+
+				<a class="btn" href="/dashboard">Dashboard</a>
+				<a class="btn" href="/logout">Logout</a>
+				{{else}}
+				<a class="btn" href="/login">Login</a>
+				{{/if}}
+			</nav>
+		</header>
+		<main>
+			{{{body}}}
+		</main>
+		<footer>
+
+		</footer>
   </body>
 </html>
