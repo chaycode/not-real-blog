@@ -42,11 +42,11 @@
 	</div>
 </div>
 <script type="text/javascript">
-	$("nav a").click(function(event) {
+	$(".dashboard-main nav a").click(function(event) {
 		var content = $(this).attr('value');
 		console.log(content);
 
-		$("nav a").attr('class', '');
+		$(".dashboard-main nav a").attr('class', '');
 		$(this).attr('class', 'active');
 		$(".dashboard-main-content div").hide()
 
